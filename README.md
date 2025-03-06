@@ -94,5 +94,9 @@ int main() {
 ~~~
 
 ## Output
+![Screenshot 2025-03-06 113305](https://github.com/user-attachments/assets/c9407961-159b-4d58-9a3a-ef518dc1360a)
+
+![Screenshot 2025-03-06 113514](https://github.com/user-attachments/assets/a46ffc58-3786-48ff-9374-e11e8c22463b)
 
 ## Result
+Program successfully executed and the errors and failures are also successfuly shown.
