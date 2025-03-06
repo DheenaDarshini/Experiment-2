@@ -1,5 +1,5 @@
 # Experiment-2
-# Name:Dheena Darshini Karthik Dheepan
+# Name: Dheena Darshini Karthik Dheepan
 # Reg no: 212223240030
 Write a program in C language for Matrix multiplication fails. Introspect the causes for its failure and write down the possible reasons for its failure.
 ## Aim
