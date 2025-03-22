@@ -70,10 +70,15 @@ else:
 
 
 ## Output
+
 ![Screenshot 2025-03-22 105749](https://github.com/user-attachments/assets/1fe0de44-cceb-4c0d-b43b-87f5b5b78cae)
+
 ![Screenshot 2025-03-22 110028](https://github.com/user-attachments/assets/0415d9b7-d471-4e67-85bb-12529df86922)
+
 ![Screenshot 2025-03-22 110616](https://github.com/user-attachments/assets/75cc0b16-f7cb-48e0-b77b-f344601fb84a)
+
 ![Screenshot 2025-03-22 110658](https://github.com/user-attachments/assets/4cc0bb91-443f-44de-a79d-b1c526f51746)
+
 ![Screenshot 2025-03-22 110749](https://github.com/user-attachments/assets/adead162-bad0-4bee-b383-9fdb53456000)
 
 
