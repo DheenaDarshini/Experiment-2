@@ -1,105 +1,84 @@
 # Experiment-2
 # Name: Dheena Darshini Karthik Dheepan
 # Reg no: 212223240030
-Write a program in C language for Matrix multiplication fails. Introspect the causes for its failure and write down the possible reasons for its failure.
+
+## Write a program in Python language for Matrix multiplication fails. Introspect the causes for its failure and write down the possible reasons for its failure. 
 ## Aim
-The aim of this program is to perform matrix multiplication, understand the causes for failure during its execution, and identify possible reasons for failure. Matrix multiplication is a binary operation that produces a matrix from two matrices. The number of columns in the first matrix must be equal to the number of rows in the second matrix for multiplication to be possible.
+Write a python program for matrix multiplication and inspect for failures. 
 
 ## Algorithm
-1.	Input the dimensions of the matrices: First, input the number of rows and columns for both matrices.
-2.	Check for multiplication compatibility: Ensure the number of columns of the first matrix is equal to the number of rows of the second matrix.
-3.	Input matrix elements: Input the elements for both matrices.
-4.	Perform matrix multiplication: For each element in the resultant matrix, sum the products of the corresponding row and column elements from the two matrices.
-5.	Output the resulting matrix: Display the resultant matrix.
-
-## Causes for Failure
+1.	Start the program.
+2. Create empty list formatrix1, matrix2 and result.
+3. Get the rows and columns count from the user.
+4. Get the values of two matrix.
+5. Perform matrix multiplication and store the answer in result.
+6. Stop the program. 
 
 ## Program
-~~~
-#include <stdio.h>
-#include <stdlib.h>
+```
 
-// Function to multiply two matrices
-void multiplyMatrices(int A[][10], int B[][10], int C[][10], int rowA, int colA, int rowB, int colB) {
-    // Check if multiplication is possible
-    if (colA != rowB) {
-        printf("Matrix multiplication is not possible. Number of columns in Matrix A must equal number of rows in Matrix B.\n");
-        return;
-    }
+r1, c1 = input("Enter row and column count for matrix 1: ").split()
+r2, c2 = input("Enter row and column count for matrix 2: ").split()
 
-    // Perform multiplication
-    for (int i = 0; i < rowA; i++) {
-        for (int j = 0; j < colB; j++) {
-            C[i][j] = 0;  // Initialize the result matrix element to zero
-            for (int k = 0; k < colA; k++) {
-                C[i][j] += A[i][k] * B[k][j];
-            }
-        }
-    }
-}
 
-// Function to input matrix elements
-void inputMatrix(int matrix[][10], int rows, int cols) {
-    printf("Enter elements of the matrix:\n");
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            printf("Element [%d][%d]: ", i + 1, j + 1);
-            scanf("%d", &matrix[i][j]);
-        }
-    }
-}
+matrix1 = []
+matrix2 = []
+result = []
 
-// Function to print matrix
-void printMatrix(int matrix[][10], int rows, int cols) {
-    printf("Resultant Matrix:\n");
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            printf("%d ", matrix[i][j]);
-        }
-        printf("\n");
-    }
-}
 
-int main() {
-    int A[10][10], B[10][10], C[10][10]; // Declare matrices
-    int rowA, colA, rowB, colB;
+if r1.isnumeric() and c1.isnumeric() and r2.isnumeric() and c2.isnumeric():
+    r1, c1, r2, c2 = map(int, (r1, c1, r2, c2))
 
-    // Input dimensions of Matrix A
-    printf("Enter the number of rows and columns for Matrix A: ");
-    scanf("%d %d", &rowA, &colA);
+    
+    if c1 != r2:
+        print("Matrix multiplication not possible")
+    elif max(r1, c1, r2, c2) > 20 or min(r1, c1, r2, c2) == 0:
+        print("Matrix multiplication not possible")
+    else:
+      
+        print("Enter elements for matrix 1:")
+        for i in range(r1):
+            row = []
+            for j in range(c1):
+                row.append(int(input(f"Matrix 1[{i+1}][{j+1}]: ")))
+            matrix1.append(row)
 
-    // Input dimensions of Matrix B
-    printf("Enter the number of rows and columns for Matrix B: ");
-    scanf("%d %d", &rowB, &colB);
+      
+        print("Enter elements for matrix 2:")
+        for i in range(r2):
+            row = []
+            for j in range(c2):
+                row.append(int(input(f"Matrix 2[{i+1}][{j+1}]: ")))
+            matrix2.append(row)
 
-    // Check for multiplication compatibility
-    if (colA != rowB) {
-        printf("Matrix multiplication is not possible. The number of columns in A must be equal to the number of rows in B.\n");
-        return 0; // Exit the program if matrices are incompatible
-    }
+        for i in range(r1):
+            row = []
+            for j in range(c2):
+                total = 0
+                for k in range(c1):
+                    total += matrix1[i][k] * matrix2[k][j]
+                row.append(total)
+            result.append(row)
 
-    // Input elements for Matrix A
-    inputMatrix(A, rowA, colA);
+     
+        print("\nResultant Matrix:")
+        for row in result:
+            print(" ".join(map(str, row)))
+else:
+    print("Enter valid numbers")
+```
 
-    // Input elements for Matrix B
-    inputMatrix(B, rowB, colB);
-
-    // Perform matrix multiplication
-    multiplyMatrices(A, B, C, rowA, colA, rowB, colB);
-
-    // Print the resulting matrix
-    printMatrix(C, rowA, colB);
-
-}
-~~~
 
 ## Output
-![Screenshot 2025-03-06 113305](https://github.com/user-attachments/assets/c9407961-159b-4d58-9a3a-ef518dc1360a)
+![Screenshot 2025-03-22 105749](https://github.com/user-attachments/assets/1fe0de44-cceb-4c0d-b43b-87f5b5b78cae)
+![Screenshot 2025-03-22 110028](https://github.com/user-attachments/assets/0415d9b7-d471-4e67-85bb-12529df86922)
+![Screenshot 2025-03-22 110616](https://github.com/user-attachments/assets/75cc0b16-f7cb-48e0-b77b-f344601fb84a)
+![Screenshot 2025-03-22 110658](https://github.com/user-attachments/assets/4cc0bb91-443f-44de-a79d-b1c526f51746)
+![Screenshot 2025-03-22 110749](https://github.com/user-attachments/assets/adead162-bad0-4bee-b383-9fdb53456000)
 
-![Screenshot 2025-03-06 113514](https://github.com/user-attachments/assets/a46ffc58-3786-48ff-9374-e11e8c22463b)
 
-![Screenshot 2025-03-08 110641](https://github.com/user-attachments/assets/ff77b2f4-1846-487a-9f72-1b6ceb3344b9)
 
 
 ## Result
-Program successfully executed and the errors and failures are also successfuly shown.
+Thus, the python program for matrix multiplication is implemented and the causes for its failure is 
+introspected successfully. 
